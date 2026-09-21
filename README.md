@@ -2,13 +2,14 @@
 
 Sistema de eventos acadêmicos exposto como serviço gRPC, em Python e SQLite.
 
-Este repositório é um de uma série de quatro, o mesmo domínio implementado em quatro protocolos
+Este repositório é um de uma série de cinco, o mesmo domínio implementado em cinco protocolos
 diferentes para deixar a diferença visível em código, não só em slide:
 
 - [protocolos-grpc](https://github.com/Ericles-Porty/protocolos-grpc) (este repositório)
 - [protocolos-rest](https://github.com/Ericles-Porty/protocolos-rest)
 - [protocolos-soap](https://github.com/Ericles-Porty/protocolos-soap)
 - [protocolos-graphql](https://github.com/Ericles-Porty/protocolos-graphql)
+- [protocolos-websocket](https://github.com/Ericles-Porty/protocolos-websocket)
 
 ## Domínio
 
