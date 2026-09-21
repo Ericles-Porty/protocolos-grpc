@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+dados.db
+.venv/
+src/eventos_pb2.py
+src/eventos_pb2_grpc.py

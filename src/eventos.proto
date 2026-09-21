@@ -1,0 +1,81 @@
+// eventos.proto — o contrato do sistema de eventos acadêmicos em gRPC.
+syntax = "proto3";
+
+package eventos;
+
+service EventosAcademicos {
+  rpc CriarAluno (CriarAlunoRequest) returns (Aluno);
+  rpc CriarEvento (CriarEventoRequest) returns (Evento);
+  rpc Inscrever (InscreverRequest) returns (Inscricao);
+  rpc RegistrarPagamento (RegistrarPagamentoRequest) returns (Pagamento);
+  rpc BuscarInscricao (BuscarInscricaoRequest) returns (Inscricao);
+  rpc EventosDoAluno (EventosDoAlunoRequest) returns (ListaEventos);
+  rpc AlunosDoEvento (AlunosDoEventoRequest) returns (ListaAlunos);
+}
+
+message Aluno {
+  int32 id = 1;
+  string nome = 2;
+  string email = 3;
+}
+
+message Evento {
+  int32 id = 1;
+  string titulo = 2;
+  string data = 3;
+}
+
+message Pagamento {
+  int32 id = 1;
+  int32 inscricao_id = 2;
+  double valor = 3;
+  string status = 4;
+}
+
+message Inscricao {
+  int32 id = 1;
+  int32 aluno_id = 2;
+  int32 evento_id = 3;
+  string status = 4;
+  Pagamento pagamento = 5;
+}
+
+message CriarAlunoRequest {
+  string nome = 1;
+  string email = 2;
+}
+
+message CriarEventoRequest {
+  string titulo = 1;
+  string data = 2;
+}
+
+message InscreverRequest {
+  int32 aluno_id = 1;
+  int32 evento_id = 2;
+}
+
+message RegistrarPagamentoRequest {
+  int32 inscricao_id = 1;
+  double valor = 2;
+}
+
+message BuscarInscricaoRequest {
+  int32 id = 1;
+}
+
+message EventosDoAlunoRequest {
+  int32 aluno_id = 1;
+}
+
+message AlunosDoEventoRequest {
+  int32 evento_id = 1;
+}
+
+message ListaEventos {
+  repeated Evento eventos = 1;
+}
+
+message ListaAlunos {
+  repeated Aluno alunos = 1;
+}
